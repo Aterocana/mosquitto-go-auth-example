@@ -105,7 +105,7 @@ func (srv *Server) acl() http.HandlerFunc {
 		authorized := false
 		switch res.ACC {
 		case read:
-			authorized = srv.canPub(res.Username, res.Topic)
+			authorized = srv.canSub(res.Username, res.Topic)
 		case write:
 			authorized = srv.canPub(res.Username, res.Topic)
 		case readWrite:
